@@ -12,7 +12,6 @@ export default class Descendente extends Component {
     axios.get(this.state.url).then((res) => {
       const datos = res.data.Countries;
       this.setState({ datos });
-      console.log(datos);
     });
   }
 

@@ -12,7 +12,6 @@ export default class Ascendete extends Component {
     axios.get(this.state.url).then((res) => {
       const datos = res.data.Countries;
       this.setState({ datos });
-      console.log(datos);
     });
   }
 
@@ -21,7 +20,15 @@ export default class Ascendete extends Component {
       <div>
         <ul>
           {this.state.datos.map((dato) => (
-            <CountryCard key={dato.ID} Country={dato.Country} />
+            <CountryCard
+              key={dato.ID}
+              Country={dato.Country}
+              TotalConfirmed={dato.TotalConfirmed}
+              TotalDeaths={dato.TotalDeaths}
+              TotalRecovered={dato.TotalRecovered}
+              NewConfirmed={dato.NewConfirmed}
+              NewDeaths={dato.NewDeaths}
+            />
           ))}
         </ul>
       </div>
