@@ -20,7 +20,15 @@ export default class Descendente extends Component {
       <div>
         <ul>
           {this.state.datos.reverse().map((dato) => (
-            <CountryCard key={dato.ID} Country={dato.Country} />
+            <CountryCard
+              key={dato.ID}
+              Country={dato.Country}
+              TotalConfirmed={dato.TotalConfirmed}
+              TotalDeaths={dato.TotalDeaths}
+              TotalRecovered={dato.TotalRecovered}
+              NewConfirmed={dato.NewConfirmed}
+              NewDeaths={dato.NewDeaths}
+            />
           ))}
         </ul>
       </div>
